@@ -14,8 +14,12 @@ function updateTimerDisplay() {
   timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
     .toString()
     .padStart(2, "0")};
-    if(TimeLeft < 60){
-    
+    // changes colour if time left is less than or equal to a minute
+    if(TimeLeft <= 60){
+        timeDisplay.classList.add("low-time")
+    }
+    else{  
+        timeDisplay.classList.remove("low-time")
     }
 }
 
