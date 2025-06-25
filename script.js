@@ -10,8 +10,13 @@ let stopButton = document.getElementById("stop");
 
 function updateTimerDisplay() {
   let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeleft % 60;
-  timerDisplay.textContent;
+  let seconds = timeLeft % 60;
+  timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
+    .toString()
+    .padStart(2, "0")};
+    if(TimeLeft < 60){
+    
+    }
 }
 
 function startTimer() {}

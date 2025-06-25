@@ -1,3 +1,9 @@
 body {
-  text-allign: center;
+  text-align: center;
+  background-color: turquoise;
+}
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
