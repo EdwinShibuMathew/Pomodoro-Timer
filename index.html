@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Pomodoro Timer</h1>
+    </nav>
+    <div class="timer-container">
+      <svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+        <ellipse rx="120" ry="180" cx="240" cy="360" style="fill: red" />
+        <ellipse rx="120" ry="180" cx="390" cy="360" style="fill: red" />
+        <ellipse rx="60" ry="30" cx="375" cy="150" style="fill: green" />
+        <line
+          x1="315"
+          y1="90"
+          x2="315"
+          y2="225"
+          style="stroke: green; stroke-width: 6"
+        />
+        <line
+          x1="324"
+          y1="150"
+          x2="435"
+          y2="150"
+          style="stroke: black; stroke-width: 1"
+        />
+      </svg>
+    </div>
+    <p id="timer">25:00</p>
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+    <script src="script.js"></script>
+  </body>
+</html>
