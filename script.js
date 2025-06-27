@@ -1,20 +1,22 @@
-let timeLeft = 25 * 60;
+let timeLeft = 60 * 25; // 25 minutes in seconds
 let timer;
 let isRunning = false;
-let isPaused = false;
+let isNotResumed = false;
 
-let timerDisplay = document.getElementById("timer");
-let pauseButton = document.getElementById("pause");
-let startButton = document.getElementById("start");
-let stopButton = document.getElementById("stop");
+const timerDisplay = document.getElementById("timer");
+const startButton = document.getElementById("start");
+const pauseButton = document.getElementById("pause");
+const stopButton = document.getElementById("stop");
 
+// Update Timer Display
 function updateTimerDisplay() {
   let minutes = Math.floor(timeLeft / 60);
   let seconds = timeLeft % 60;
   timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
     .toString()
     .padStart(2, "0")}`;
-  // changes colour if time left is less than or equal to a minute
+
+  // Change text color if less than 1 minute left
   if (timeLeft <= 60) {
     timerDisplay.classList.add("low-time");
   } else {
@@ -22,10 +24,11 @@ function updateTimerDisplay() {
   }
 }
 
+// Start Timer
 function startTimer() {
   if (!isRunning) {
     isRunning = true;
-    isPaused = false;
+    isNotResumed = false;
     timer = setInterval(() => {
       if (timeLeft > 0) {
         timeLeft--;
@@ -38,32 +41,34 @@ function startTimer() {
     }, 1000);
   }
 }
-// Pause & Resume timer
+
+// Pause & Resume Timer
 function pauseTimer() {
   if (isRunning) {
     clearInterval(timer);
     isRunning = false;
-    isPaused = true;
+    isNotResumed = true;
     pauseButton.textContent = "Resume";
-  } else if (isPaused) {
+  } else if (isNotResumed) {
     startTimer();
     pauseButton.textContent = "Pause";
   }
 }
-// Stop & reset timer
+
+// Stop & Reset Timer
 function stopTimer() {
   clearInterval(timer);
   isRunning = false;
-  isPaused = false;
-  timeLeft = 25 * 60;
+  isNotResumed = false;
+  timeLeft = 25 * 60; // Reset to 2 minutes
   updateTimerDisplay();
   pauseButton.textContent = "Pause";
 }
 
-// event listeners for each button
+// Event Listeners
 startButton.addEventListener("click", startTimer);
 pauseButton.addEventListener("click", pauseTimer);
 stopButton.addEventListener("click", stopTimer);
 
-//initialize timer display
+// Initialize Timer Display
 updateTimerDisplay();
