@@ -33,7 +33,18 @@ Pomodoro-Timer/
   let timeLeft = 60 * 25; // 25 minutes in seconds
   ```
 
- **Credits**
+---
+
+## Deployment
+
+You can easily deploy the Pomodoro Timer online and share it with others!
+
+**Live Demo:**  
+Link for deployment : https://pomodoro-timer-psi-five.vercel.app/
+
+---
+
+**Credits**
 
 Created by Edwin Shibu Mathew.  
 Inspired by the Pomodoro productivity technique.
